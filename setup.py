@@ -3,9 +3,9 @@
 from distutils.core import setup
 
 setup(
-name='{name-of-your-project}',
+name='{ASCII Art Generator}',
 version='1.0',
-author='{your-full-name-or-your-github-username}',
+author='{NotHilal}',
 license='MIT',
 long_description=open('README.md').read(),
 )
