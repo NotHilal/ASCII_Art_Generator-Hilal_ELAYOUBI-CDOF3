@@ -1,13 +1,6 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jan 19 15:02:26 2025
 
-@author: hilal
 """
-
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jan 19 14:42:14 2025
+Created on Sun Jan 12 14:42:14 2025
 
 @author: hilal
 """
@@ -15,7 +8,7 @@ Created on Sun Jan 19 14:42:14 2025
 import os
 import platform
 
-# Dictionary to store ASCII art for each character
+
 ascii_art = {
     'a': [
         "           ",
@@ -128,14 +121,14 @@ ascii_art = {
         "           "
     ],
     'l': [
-        "  _        ",
-        " | |       ",
-        " | |       ",
-        " | |       ",
-        " | |       ",
-        " |_|       ",
-        "           ",
-        "           "
+        "  _      ",
+        " | |     ",
+        " | |     ",
+        " | |     ",
+        " | |     ",
+        " |_|     ",
+        "         ",
+        "         "
     ],
     'm': [
         "               ",
@@ -412,24 +405,23 @@ ascii_art = {
     
 }
 
-# Function to clear the console
 def clear_console():
     if platform.system() == "Windows":
         os.system('cls')
     else:
         os.system('clear')
 
-# Function to print ASCII art side-by-side
+
 def print_ascii_art(text):
-    rows = [""] * 8  # Maximum height of ASCII art
+    rows = [""] * 8  
     for char in text.lower():
-        art = ascii_art.get(char, ["[??]"] * 8)  # Handle undefined characters
+        art = ascii_art.get(char, ["[??]"] * 8)  
         for i, line in enumerate(art):
             rows[i] += line + "  "
     for row in rows:
         print(row)
 
-# Main program
+
 if __name__ == "__main__":
     clear_console()
     print("Welcome to the ASCII Art Generator!")
