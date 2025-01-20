@@ -687,8 +687,8 @@ if __name__ == "__main__":
     clear_console()  # Clear the console screen
     print("Welcome to the ASCII Art Generator!")  # Welcome message
     while True:
-        user_input = input("Enter text to generate ASCII art (or type 'exit' to quit): ")  # Prompt user for input
-        if user_input.lower() == "exit":  # Check if user wants to exit
+        user_input = input("Enter text to generate ASCII art (or type nothing to quit): ")  # Prompt user for input
+        if user_input.lower() == "":  # Check if user wants to exit
             print("Goodbye!")  # Goodbye message
             break  # Exit the loop
         print_ascii_art(user_input)  # Generate and print the ASCII art for the input
