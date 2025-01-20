@@ -8,7 +8,7 @@ Created on Sun Jan 12 14:42:14 2025
 import os
 import platform
 
-
+# ASCII art dictionary to represent each character with a corresponding ASCII art representation
 ascii_art = {
     'a': [
         "           ",
@@ -665,29 +665,30 @@ ascii_art = {
     
 }
 
+# Function to clear the console screen based on the operating system
 def clear_console():
     if platform.system() == "Windows":
-        os.system('cls')
+        os.system('cls')  # Command to clear the console on Windows
     else:
-        os.system('clear')
+        os.system('clear')  # Command to clear the console on Unix/Linux/Mac
 
-
+# Function to print the ASCII art for a given text input
 def print_ascii_art(text):
-    rows = [""] * 8  
+    rows = [""] * 8  # Initialize a list of 8 empty strings, one for each row of the ASCII art
     for char in text:
-        art = ascii_art.get(char, ["[??]"] * 8)  
+        art = ascii_art.get(char, ["[??]"] * 8)  # Get the ASCII art for the character, or placeholder if not found
         for i, line in enumerate(art):
-            rows[i] += line + "  "
+            rows[i] += line + "  "  # Append the line of ASCII art to the corresponding row, with spacing
     for row in rows:
-        print(row)
+        print(row)  # Print each row of the ASCII art
 
-
+# Main entry point of the script
 if __name__ == "__main__":
-    clear_console()
-    print("Welcome to the ASCII Art Generator!")
+    clear_console()  # Clear the console screen
+    print("Welcome to the ASCII Art Generator!")  # Welcome message
     while True:
-        user_input = input("Enter text to generate ASCII art (or type 'exit' to quit): ")
-        if user_input.lower() == "exit":
-            print("Goodbye!")
-            break
-        print_ascii_art(user_input)
+        user_input = input("Enter text to generate ASCII art (or type 'exit' to quit): ")  # Prompt user for input
+        if user_input.lower() == "exit":  # Check if user wants to exit
+            print("Goodbye!")  # Goodbye message
+            break  # Exit the loop
+        print_ascii_art(user_input)  # Generate and print the ASCII art for the input
